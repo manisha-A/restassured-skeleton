@@ -14,7 +14,6 @@ public class DemoTest {
     static final String SEARCH_EP = "https://api.github.com/search/repositories";
     @Test
     void someTest(){
-        System.out.println("test");
         RestAssured.get(BASE_URL)
                 .then()
                 .statusCode(200);
@@ -23,7 +22,6 @@ public class DemoTest {
     @Test
     void somePrettyPeekest(){
         RestAssured.get(BASE_URL)
-                .prettyPeek()
                 .then()
                 .statusCode(200);
     }
@@ -55,7 +53,6 @@ public class DemoTest {
     @ParameterizedTest
     @MethodSource("paramsHashMap")
     void parameterisedTest(Map<String, String> params, int expectedCount){
-        System.out.println(params.entrySet());
         var response =
         RestAssured
                 .given()
