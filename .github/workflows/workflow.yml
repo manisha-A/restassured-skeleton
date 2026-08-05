@@ -35,7 +35,7 @@ jobs:
     - name: Run Tests
       run: mvn clean verify
     - name: Generate allure report
-      uses: simple-elf/allure-report-action@v1.11
+      uses: simple-elf/allure-report-action@master
       if: always()
       with:
         allure_results: target/allure-results
