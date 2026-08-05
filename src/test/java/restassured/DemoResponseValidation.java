@@ -38,4 +38,15 @@ public class DemoResponseValidation {
                 .body("items.owner.user_view_type", hasItem("public"))
         ;
     }
+
+    @Test
+    void validateHeadMethod(){
+        RestAssured
+                .when()
+                .head("https://api.github.com")
+                .then()
+                .statusCode(200)
+                .body(emptyOrNullString())
+        ;
+    }
 }
