@@ -2,19 +2,19 @@ package restassured;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.ResponseSpecBuilder;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 
 public class BaseSetUp {
-    @BeforeAll
-    static void setUp(){
+    @BeforeEach
+    void setUp(){
         RestAssured.responseSpecification= new ResponseSpecBuilder()
                 .expectStatusCode(200)
                 .build();
     }
 
-    @AfterAll
-    static void tearDown(){
+    @AfterEach
+    void tearDown(){
         RestAssured.responseSpecification= null;
     }
 }

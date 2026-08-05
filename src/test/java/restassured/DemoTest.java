@@ -1,7 +1,10 @@
 package restassured;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -13,13 +16,14 @@ public class DemoTest extends BaseSetUp {
     static final String BASE_URL = "https://api.github.com";
     static final String SEARCH_EP = "https://api.github.com/search/repositories";
     @Test
+    @DisplayName("this is a dummy test")
+    @Description("Invalid Login Test with Invalid Username and Invalid Password.")
     void someTest(){
         RestAssured.get(BASE_URL);
-//                .then()
-//                .statusCode(200);
     }
 
     @Test
+    @Description("Explore Response Object example.")
     void exploreResponseObject(){
         Response response = RestAssured.get(BASE_URL);
         assertEquals(200, response.getStatusCode());
