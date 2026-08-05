@@ -9,21 +9,14 @@ import java.util.Map;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class DemoTest {
+public class DemoTest extends BaseSetUp {
     static final String BASE_URL = "https://api.github.com";
     static final String SEARCH_EP = "https://api.github.com/search/repositories";
     @Test
     void someTest(){
-        RestAssured.get(BASE_URL)
-                .then()
-                .statusCode(200);
-    }
-
-    @Test
-    void somePrettyPeekest(){
-        RestAssured.get(BASE_URL)
-                .then()
-                .statusCode(200);
+        RestAssured.get(BASE_URL);
+//                .then()
+//                .statusCode(200);
     }
 
     @Test
@@ -46,8 +39,7 @@ public class DemoTest {
                 .given()
                 .params(Map.of("q", "java", "per_page", "1"))
                 .get(BASE_URL + "/search/repositories")
-                .then()
-                .statusCode(200);
+                ;
     }
 
     @ParameterizedTest

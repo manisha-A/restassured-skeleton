@@ -12,22 +12,10 @@ import java.util.Map;
 import static org.hamcrest.Matchers.*;
 
 
-public class DemoResponseTest {
+public class DemoResponseTest extends BaseSetUp{
 
     static final String RATE_LIMIT_EP = "https://api.github.com/rate_limit";
     static final String SEARCH_EP = "https://api.github.com/search/repositories";
-
-    @BeforeAll
-    static void setUp(){
-        RestAssured.responseSpecification= new ResponseSpecBuilder()
-                .expectStatusCode(200)
-                .build();
-    }
-
-    @AfterAll
-    static void tearDown(){
-        RestAssured.responseSpecification= null;
-    }
 
     @Test
     void validateResponseFields(){
