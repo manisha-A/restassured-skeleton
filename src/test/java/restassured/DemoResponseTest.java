@@ -8,7 +8,7 @@ import java.util.Map;
 import static org.hamcrest.Matchers.*;
 
 
-public class DemoResponseValidation {
+public class DemoResponseTest {
 
     static final String RATE_LIMIT_EP = "https://api.github.com/rate_limit";
     static final String SEARCH_EP = "https://api.github.com/search/repositories";

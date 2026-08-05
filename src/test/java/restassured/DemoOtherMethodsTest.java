@@ -4,7 +4,7 @@ import io.restassured.RestAssured;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-public class DemoOtherMethodsValidation {
+public class DemoOtherMethodsTest {
     static final String REPO_EP = "https://api.github.com/user/repos";
     // replace the value with actual token
     static final String TOKEN = "token";
