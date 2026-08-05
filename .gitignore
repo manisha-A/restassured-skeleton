@@ -37,3 +37,4 @@ target/
 *.rar
 
 allure-report/
+.allure/
